@@ -36,7 +36,9 @@ Check UERANSIM:
 docker compose ps
 ```
 
-Project Structure
+### Project Structure
+
+```text
 .
 ├── sa-deploy.yaml
 ├── .env.example
@@ -59,3 +61,4 @@ Project Structure
         ├── gnb.yaml
         ├── ue-1.yaml
         └── ue-2.yaml
+```

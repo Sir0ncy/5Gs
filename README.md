@@ -11,6 +11,12 @@ Containerized 5G network and slicing lab using Open5GS and UERANSIM.
 
 ## How to Run
 
+Copy the .env.template file, named it .env
+
+```bash
+cp .env.template .env
+```
+
 Start Open5GS:
 
 ```bash

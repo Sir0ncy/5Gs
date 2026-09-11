@@ -17,6 +17,12 @@ Copy the .env.template file, named it .env
 cp .env.template .env
 ```
 
+Build the base image for Open5GS core image:
+
+```bash
+docker build -t docker_open5gs ./base
+```
+
 Start Open5GS:
 
 ```bash

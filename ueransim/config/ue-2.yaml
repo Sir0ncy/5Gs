@@ -1,0 +1,101 @@
+# IMSI number of the UE
+supi: 'imsi-00101260910002'
+
+# Mobile Country Code value of HPLMN
+mcc: '001'
+
+# Mobile Network Code value of HPLMN
+mnc: '01'
+
+# SUCI Protection Scheme
+protectionScheme: 0
+
+# Home Network Public Key
+# Not used with null-scheme
+homeNetworkPublicKey: '5a8d38864820197c3394b92613b20b91633cbd897119273bf8e4a6f4eec0a650'
+
+# Home Network Public Key ID
+homeNetworkPublicKeyId: 1
+
+# Routing Indicator
+routingIndicator: '0000'
+
+# Permanent subscription key
+key: '8C33994455EBFDC03773C950F9628440'
+
+# Operator code / OPC
+op: '76270B09960514ECE1D6913DC708B832'
+
+# This value specifies the OP type
+opType: 'OPC'
+
+# Authentication Management Field
+amf: '8000'
+
+# IMEI
+imei: '356938035643803'
+
+# IMEISV
+imeiSv: '4370816125816151'
+
+# Network mask for UE TUN interface
+tunNetmask: '255.255.255.0'
+
+# Create UE TUN interface inside a dedicated network namespace
+useNamespace: false
+
+# Optional namespace prefix
+nsNamePrefix: 'ueransim'
+
+# gNB IP address for Radio Link Simulation
+gnbSearchList:
+  - 172.22.0.200
+
+# UAC Access Identities Configuration
+uacAic:
+  mps: false
+  mcs: false
+
+# UAC Access Control Class
+uacAcc:
+  normalClass: 0
+  class11: false
+  class12: false
+  class13: false
+  class14: false
+  class15: false
+
+# Initial PDU sessions
+sessions:
+  - type: 'IPv4'
+    apn: 'internet'
+    slice:
+      sst: 1
+      sd: 0x000002
+
+# Configured NSSAI
+configured-nssai:
+  - sst: 1
+    sd: 0x000002
+
+# Default Configured NSSAI
+default-nssai:
+  - sst: 1
+    sd: 0x000002
+
+# Supported integrity algorithms
+integrity:
+  IA1: true
+  IA2: true
+  IA3: true
+
+# Supported encryption algorithms
+ciphering:
+  EA1: true
+  EA2: true
+  EA3: true
+
+# Integrity protection maximum data rate
+integrityMaxRate:
+  uplink: 'full'
+  downlink: 'full'

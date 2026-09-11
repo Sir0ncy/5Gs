@@ -1,0 +1,30 @@
+log/
+**/*.log
+**/*.ctxt
+**/*.pcap
+**/*.db
+**/*.db-shm
+**/*.db-wal
+
+# Secrets
+.env
+*.key
+*.pem
+*.p12
+
+# Runtime logs
+log/
+
+# Database/runtime data
+mongodbdata/
+*.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store

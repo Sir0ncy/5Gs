@@ -1,0 +1,40 @@
+services:
+  gnb:
+    image: free5gc/ueransim:latest
+    container_name: ueransim-gnb
+    command: ./nr-gnb -c /ueransim/config/gnb.yaml
+    volumes:
+      - ./config:/ueransim/config:ro
+    networks:
+      5g_core:
+        ipv4_address: 172.22.0.200
+
+  ue1:
+    image: free5gc/ueransim:latest
+    container_name: ueransim-ue1
+    command: ./nr-ue -c /ueransim/config/ue-1.yaml
+    volumes:
+      - ./config:/ueransim/config:ro
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    networks:
+      - 5g_core
+
+  ue2:
+    image: free5gc/ueransim:latest
+    container_name: ueransim-ue2
+    command: ./nr-ue -c /ueransim/config/ue-2.yaml
+    volumes:
+      - ./config:/ueransim/config:ro
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    networks:
+      - 5g_core
+
+networks:
+  5g_core:
+    external: true

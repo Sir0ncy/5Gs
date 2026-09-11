@@ -1,0 +1,23 @@
+services:
+
+  ueransim:
+    image: pocketsysadminjci/ueransim:latest
+    container_name: ueransim
+    privileged: true
+
+    volumes:
+      - ./config:/ueransim/config
+
+    networks:
+      open5gs:
+        ipv4_address: 172.22.0.20
+
+    tty: true
+    stdin_open: true
+
+    command: /bin/bash
+
+networks:
+  open5gs:
+    external: true
+    name: docker_open5gs_default

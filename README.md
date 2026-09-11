@@ -23,6 +23,12 @@ Build the base image for Open5GS core image:
 docker build -t docker_open5gs ./base
 ```
 
+Change 'DOCKER_HOST_IP' to your host IP
+
+```bash
+DOCKER_HOST_IP=x.x.x.x
+```
+
 Start Open5GS:
 
 ```bash

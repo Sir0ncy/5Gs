@@ -1,5 +1,1 @@
-docker ps --format '{{.ID}} {{.Names}} {{.Ports}}' | while read -r id name ports; do
-    ip=
-    printf %-20s %-15s %-30sn   
-done
-
+printf "%-25s %-20s %-30s %-15s\n" "NAMES" "NETWORKS" "PORTS" "IP ADDRESS" && docker ps --format "{{.Names}}\t{{.Networks}}\t{{.Ports}}" | while IFS=$'\t' read -r name networks ports; do ip=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}} {{end}}' "$name" | xargs); printf "%-25s %-20s %-30s %-15s\n" "$name" "$networks" "${ports:-none}" "${ip:-none}"; done

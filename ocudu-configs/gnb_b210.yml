@@ -1,0 +1,53 @@
+cu_cp:
+  amf:
+    addrs: 172.22.0.10
+    port: 38412
+    bind_addrs: 10.1.20.200
+    supported_tracking_areas:
+      - tac: 1
+        plmn_list:
+          - plmn: "00101"
+            tai_slice_support_list:
+              - sst: 1 # Slice 1
+                sd: "000001"
+              - sst: 1 # Slice 2
+                sd: "000002"
+
+ru_sdr:
+  device_driver: uhd
+  device_args: type=b200
+  clock: internal
+  srate: 23.04
+  tx_gain: 80
+  rx_gain: 40
+
+cell_cfg:
+  dl_arfcn: 368500
+  band: 3
+  channel_bandwidth_MHz: 20
+  common_scs: 15
+  plmn: "00101"
+  tac: 1
+  pdcch:
+    dedicated:
+      ss2_type: common
+      dci_format_0_1_and_1_1: false
+    common:
+      ss0_index: 0
+      coreset0_index: 12
+  prach:
+    prach_config_index: 1
+  pdsch:
+    mcs_table: qam64
+  pusch:
+    mcs_table: qam64
+
+log:
+  filename: /opt/open5gs/docker_open5gs/ocudu-configs/var/gnb.log
+  all_level: info
+
+pcap:
+  mac_enable: true
+  mac_filename: /opt/open5gs/docker_open5gs/ocudu-configs/var/gnb_mac.pcap
+  ngap_enable: true
+  ngap_filename: /opt/open5gs/docker_open5gs/ocudu-configs/var/gnb_ngap.pcap

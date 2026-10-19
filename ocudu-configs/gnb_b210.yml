@@ -43,11 +43,11 @@ cell_cfg:
     mcs_table: qam64
 
 log:
-  filename: /opt/open5gs/docker_open5gs/ocudu-configs/var/gnb.log
+  filename: var/gnb.log
   all_level: info
 
 pcap:
   mac_enable: true
-  mac_filename: /opt/open5gs/docker_open5gs/ocudu-configs/var/gnb_mac.pcap
+  mac_filename: var/gnb_mac.pcap
   ngap_enable: true
-  ngap_filename: /opt/open5gs/docker_open5gs/ocudu-configs/var/gnb_ngap.pcap
+  ngap_filename: var/gnb_ngap.pcap
